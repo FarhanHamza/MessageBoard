@@ -1,0 +1,67 @@
+<div class="dialog-container">
+    <button mat-icon-button class="close-button" (click)="onClose()">
+      <mat-icon>close</mat-icon>
+    </button>
+    
+    <h2 mat-dialog-title>{{ data?.readonly ? 'Message Details' : 'New Message' }}</h2>
+    
+    <mat-progress-bar mode="indeterminate" *ngIf="submitting" class="submit-progress"></mat-progress-bar>
+
+    <form [formGroup]="messageForm" (ngSubmit)="onSubmit()" *ngIf="!data?.readonly">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email">
+        <mat-error *ngIf="messageForm.get('email')?.errors?.['required']">
+          Email is required
+        </mat-error>
+        <mat-error *ngIf="messageForm.get('email')?.errors?.['email']">
+          Please enter a valid email
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Message</mat-label>
+        <textarea matInput formControlName="message" rows="4"></textarea>
+        <mat-error *ngIf="messageForm.get('message')?.errors?.['required']">
+          Message is required
+        </mat-error>
+        <mat-error *ngIf="messageForm.get('message')?.errors?.['minlength']">
+          Message must be at least 10 characters
+        </mat-error>
+        <mat-error *ngIf="messageForm.get('message')?.errors?.['maxlength']">
+          Message cannot exceed 500 characters
+        </mat-error>
+      </mat-form-field>
+
+      <div class="dialog-actions">
+        <button mat-button type="button" (click)="onClose()">Cancel</button>
+        <button 
+          mat-raised-button 
+          color="primary" 
+          type="submit" 
+          [disabled]="messageForm.invalid || submitting"
+          class="submit-button">
+          Submit
+        </button>
+      </div>
+    </form>
+
+    <div *ngIf="data?.readonly" class="message-details">
+      <div class="detail-row">
+        <strong>From:</strong>
+        <span class="detail-value">{{data.message.email}}</span>
+      </div>
+      <div class="detail-row">
+        <strong>Date:</strong>
+        <span class="detail-value">{{data.message.createdAt | date:'medium'}}</span>
+      </div>
+      <div class="message-content">
+        <strong>Message:</strong>
+        <p class="full-message">{{data.message.message}}</p>
+      </div>
+      
+      <div class="dialog-actions">
+        <button mat-button (click)="onClose()">Close</button>
+      </div>
+    </div>
+  </div>

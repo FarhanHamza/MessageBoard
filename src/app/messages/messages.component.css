@@ -1,0 +1,85 @@
+.messages-container {
+    padding: 20px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .add-button {
+    background: linear-gradient(45deg, #3f51b5, #2196f3);
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+  }
+
+  .loading-spinner {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+
+  table {
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-width: 800px;
+  }
+
+  .message-row:nth-child(even) {
+    background-color: rgba(0,0,0,0.02);
+  }
+
+  .message-row:hover {
+    background-color: rgba(0,0,0,0.04);
+  }
+
+  .message-cell {
+    max-width: 400px;
+    min-width: 200px;
+  }
+
+  .message-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 0;
+  }
+
+  .full-message {
+    padding: 8px 0;
+  }
+
+  .email-cell {
+    min-width: 150px;
+  }
+
+  .read-more-button {
+    flex-shrink: 0;
+    margin-top: -8px;
+  }
+
+  th.mat-header-cell {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    color: rgba(0,0,0,0.87);
+    white-space: nowrap;
+    padding: 16px;
+  }
+
+  .mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    padding: 8px 16px;
+  }
+
+  @media (max-width: 600px) {
+    .header h1 {
+      font-size: 24px;
+    }
+  }

@@ -1,0 +1,39 @@
+{
+  "name": "angular-messages",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "deploy": "ng build && firebase deploy --token \"1//03-pCKaWkWG15CgYIARAAGAMSNwF-L9IrViOdRhxOIl13x8Erdv6RMRlheKXPp6pYIvVVuUCAuXeNfabi17o_cltSkO4CSMl0A8Y\"",
+    "dev": "ng serve"
+  },
+  "dependencies": {
+    "@angular/animations": "^19.2.2",
+    "@angular/cdk": "^19.2.3",
+    "@angular/common": "^19.2.2",
+    "@angular/compiler": "^19.2.2",
+    "@angular/core": "^19.2.2",
+    "@angular/fire": "^19.0.0",
+    "@angular/forms": "^19.2.2",
+    "@angular/material": "^19.2.3",
+    "@angular/platform-browser": "^19.2.2",
+    "@angular/platform-browser-dynamic": "^19.2.2",
+    "@angular/router": "^19.2.2",
+    "@ngrx/effects": "^19.0.1",
+    "@ngrx/store": "^19.0.1",
+    "@ngrx/store-devtools": "^19.0.1",
+    "firebase": "^10.8.0",
+    "rxjs": "~7.8.1",
+    "tslib": "^2.6.2",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^19.2.3",
+    "@angular/cli": "^19.2.3",
+    "@angular/compiler-cli": "^19.2.2",
+    "firebase-tools": "^13.4.0",
+    "typescript": "~5.5.4"
+  }
+}
